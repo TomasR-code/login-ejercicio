@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "8c7a1e0c-47ad-4d42-8e9e-f310a26892a1",
+		"name": "login",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9569799",
+		"_collection_link": "https://cloudy-station-208899.postman.co/workspace/fravega-TECH~d6a15547-5bb7-4469-adf6-9e324318ccc9/collection/9569799-8c7a1e0c-47ad-4d42-8e9e-f310a26892a1?action=share&source=collection_link&creator=9569799"
+	},
+	"item": [
+		{
+			"name": "sign-up",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"tomi\",\r\n    \"email\": \"aaaaaaa@undominio.algo\",\r\n    \"password\": \"a2asfGfdfdf4\",\r\n    \"phones\": [\r\n        {\r\n            \"number\": 1122334455,\r\n            \"cityCode\": 1616,\r\n            \"countryCode\": \"ar\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/app/sign-up",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"sign-up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login-token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhYWFhYWFhQHVuZG9taW5pby5hbGdvIiwiaWF0IjoxNjkzNTI2NzQ2LCJleHAiOjE2OTM1MzAzNDZ9.6plXNNGrmUVLJE_5Fn0KgZXPvgLxIncYrva2G7dsreA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"aaaaaaa@undominio.algo\",\r\n    \"password\": \"a2asfGfdfdf4\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/token/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"token",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": " Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhYWFhYWFhQHVuZG9taW5pby5hbGdvIiwiaWF0IjoxNjkzNTI5MzM3LCJleHAiOjE2OTM1MzI5Mzd9.RGo6OmrfPgmGShEXztTaXJepeDesFIEo9kRCkEILmkc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/app/login?email=aaaaaaa@undominio.algo&password=a2asfGfdfdf4&token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhYWFhYWFhQHVuZG9taW5pby5hbGdvIiwiaWF0IjoxNjkzNTQxMDk4LCJleHAiOjE2OTM1NDQ2OTh9.05_KeAxML41xMGADS4RVk_JnNo_PSaRwvYgRWWmcMME",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "aaaaaaa@undominio.algo"
+						},
+						{
+							"key": "password",
+							"value": "a2asfGfdfdf4"
+						},
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhYWFhYWFhQHVuZG9taW5pby5hbGdvIiwiaWF0IjoxNjkzNTQxMDk4LCJleHAiOjE2OTM1NDQ2OTh9.05_KeAxML41xMGADS4RVk_JnNo_PSaRwvYgRWWmcMME"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
