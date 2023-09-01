@@ -36,20 +36,26 @@ FLUJO DE EJECUCION:
 El flujo típico de ejecución para los dos caminos principales, registro e inicio de sesión, se describe a continuación:
 
 - Registro (Sign Up):
-El cliente envía una solicitud al controlador AuthController.
-El controlador pasa la solicitud al servicio UserService para validar y procesar.
-El servicio realiza la lógica de registro, incluyendo la validación de datos y el almacenamiento en la base de datos a través 
-del repositorio UserRepository.
+  1. El cliente envía una solicitud de registro al controlador.
+  2. El controlador crea una instancia de la clase RequestSignUp a partir de los datos de la solicitud del cliente.
+  3. El controlador pasa la instancia de RequestSignUp al servicio de registro.
+  4. El servicio de registro valida los datos de la instancia de RequestSignUp.
+  5. Si los datos son válidos, el servicio de registro crea una nueva instancia de la clase UserEntity.
+  6. El servicio de registro guarda la instancia de UserEntity en la base de datos.
+  7. El servicio de registro devuelve una respuesta al cliente.
 
 
 - Inicio de Sesión (Log In):
-El cliente envía una solicitud al controlador AuthController.
-El controlador pasa la solicitud al servicio UserService para validar y procesar.
-El servicio realiza la lógica de inicio de sesión, incluyendo la validación de credenciales y la generación del token JWT 
-a través del servicio AuthService.
+  1. El cliente envía una solicitud de inicio de sesión al controlador.
+  2. El controlador crea una instancia de la clase AuthRequest a partir de los datos de la solicitud del cliente.
+  3. El controlador pasa la instancia de AuthRequest al servicio de inicio de sesión.
+  4. El servicio de inicio de sesión valida las credenciales del usuario.
+  5. Si las credenciales son válidas, el servicio de inicio de sesión consulta la base de datos para obtener los datos del usuario.
+  6. El servicio de inicio de sesión genera un token JWT para el usuario.
+  7. El servicio de inicio de sesión devuelve el token JWT al cliente.
 
-Tuve un pequeño problema que hasta el momento no pude solucionarlo, si ejecutas mvn clean install se rompe el mapper (UserEntityMapper). 
+*Tuve un pequeño problema que hasta el momento no pude solucionarlo, si ejecutas mvn clean install se rompe el mapper (UserEntityMapper). 
 De todas formas el proyecto sigue funcionando.
 En caso de ejecutar el comando y el proyecto no funcione, se debe borrar el archivo que esta dentro de 
 target - generated-sources - annotations - com.example.login.mapper y el archivo que este dentro, eliminarlo.
-Luego ejecutar el proyecto sin mvn clean install
+Luego ejecutar el proyecto sin mvn clean install*
